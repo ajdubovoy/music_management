@@ -26,6 +26,11 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+# Guardian for authentication
+config :music_management, MusicManagement.Guardian,
+       issuer: "music_management",
+       secret_key: "vFoLVTHgh+kiHKy7rRvxf3yQZfY2/X3LqDppTLFPkz+9FO0wA/L6f+2AY56K3OPm"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
