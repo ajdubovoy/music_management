@@ -1,9 +1,9 @@
 /**
  * @module stack-l
  * @description
- * A custom element for injecting white space (margin) between flow 
+ * A custom element for injecting white space (margin) between flow
  * (block) elements along a vertical axis.
- * @property {string} space=var(--s1) A CSS `margin` value
+ * @property {string} space=var(--space) A CSS `margin` value
  * @property {boolean} recursive=false Whether the spaces apply recursively (i.e. regardless of nesting level)
  * @property {number} splitAfter=null The element after which to _split_ the stack with an auto margin
  */
@@ -20,12 +20,12 @@ export default class Stack extends HTMLElement {
           [data-i="${this.i}"]${this.recursive ? '' : ' >'} * + * {
             margin-top: ${this.space};
           }
-      
+
           ${this.splitAfter ? `
             [data-i="${this.i}"]:only-child {
               height: 100%;
             }
-      
+
             [data-i="${this.i}"] > :nth-child(${this.splitAfter}) {
               margin-bottom: auto;
             }`
@@ -37,7 +37,7 @@ export default class Stack extends HTMLElement {
   }
 
   get space() {
-    return this.getAttribute('space') || 'var(--s1)';
+    return this.getAttribute('space') || 'var(--space)';
   }
 
   set space(val) {
