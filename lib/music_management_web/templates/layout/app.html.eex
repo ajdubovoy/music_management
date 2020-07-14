@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
-  <body>
-    <%= render "_user_menu.html", assigns %>
+  <body data-theme="light">
+    <%= render "_skip-link.html" %>
+    <%= render "_user-menu.html", assigns %>
     <main role="main" id="main-content">
       <%= @inner_content %>
     </main>

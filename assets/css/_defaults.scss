@@ -1,18 +1,36 @@
 :root {
   --space: #{get-size('600')};
+
+  --color-background: #{get-color('light')};
+  --color-mid: #{get-color('mid')};
+  --color-text: #{get-color('dark')};
+
+  @include apply-utility('duration', 'med');
+}
+
+[data-theme=dark] {
+  --color-background: #{get-color('dark')};
+  --color-mid: #{get-color('mid')};
+  --color-text: #{get-color('light')};
 }
 
 body {
-  background: get-color('light');
-  color: get-color('dark');
+  background: var(--color-background, #{get-color('light')});
+  color: var(--color-text, #{get-color('dark')});
   font-size: get-size('500');
+  transition: color var(--duration), background var(--duration);
 
   @include apply-utility('leading', 'regular');
   @include apply-utility('font', 'base');
 }
 
+a:not([class]) {
+  color: currentColor;
+  text-decoration-color: var(--color-mid);
+}
+
 :focus {
-  outline: 2px dashed get-color('primary');
+  outline: 2px dashed var(--color-text);
   outline-offset: 0.25rem;
 }
 
@@ -26,18 +44,18 @@ h3,
 h4 {
   font-weight: 900;
 
-  @include apply-utility('font', 'sans');
+  @include apply-utility('font', 'special');
   @include apply-utility('leading', 'flat');
 }
 
 // High contrast selection because it can help visually-impaired
 // folks read the text easier
 ::selection {
-  color: get-color('light');
+  color: var(--color-background);
 
   // We set this as an RGBA because that’s how you get a solid color, by using 0.99
   // alpha value. Browsers are wild.
-  background: rgba(get-color('primary'), 0.99);
+  background: var(--color-text);
 }
 
 // Scrollbar styles
@@ -47,11 +65,11 @@ h4 {
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
-  border: 1px solid get-color('primary');
+  border: 1px solid var(--color-mid, #{get-color('mid')});
   border-radius: 0.25rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: get-color('dark');
+  background-color: var(--color-background, #{get-color('dark')});
   border-radius: 0.25rem;
 }

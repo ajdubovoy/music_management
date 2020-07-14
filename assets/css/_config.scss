@@ -1,4 +1,5 @@
 @import 'gorko/gorko.scss';
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;1,700&display=swap');
 
 /**
  * BASE SIZE
@@ -47,9 +48,11 @@ $gorko-size-scale: (
  * You can also use them to power borders, fills or shadows, for example.
  */
 $gorko-colors: (
-  'dark': #1a1a1a,
-  'light': #f3f3f3,
-  'primary': #017aff
+  'dark': #050505,
+  'darkish': #404040,
+  'mid': grey,
+  'lightish': #e6e6e6,
+  'light': #fafafa
 );
 
 /**
@@ -80,7 +83,8 @@ $gorko-config: (
   ),
   'font': (
     'items': (
-      'base': 'Helvetica, Arial, sans-serif'
+      'base': 'Helvetica Neue,Helvetica,Arial,sans-serif',
+      'special': 'Barlow Condensed,Helvetica,sans-serif'
     ),
     'output': 'standard',
     'property': 'font-family'
@@ -189,5 +193,14 @@ $gorko-config: (
     ),
     'output': 'responsive',
     'property': 'max-width',
+  ),
+  'duration': (
+    'items': (
+      'short': '350ms',
+      'med': '500ms',
+      'long': '850ms'
+    ),
+    'output': 'standard',
+    'property': '--duration',
   )
 );
