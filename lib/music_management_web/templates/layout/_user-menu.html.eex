@@ -1,6 +1,6 @@
 <nav id="user-menu">
   <ul class="user-menu">
-    <l-stack>
+    <stack-l>
       <%= if @current_user do %>
         <li><%= @current_user.email %></li>
         <li><%= link "Settings", to: Routes.user_settings_path(@conn, :edit), 'up-follow': true %></li>
@@ -9,6 +9,6 @@
         <%# <li><%= link "Register", to: Routes.user_registration_path(@conn, :new) %></li>
         <li><%= link "Log in", to: Routes.user_session_path(@conn, :new), 'up-follow': true %></li>
       <% end %>
-    </l-stack>
+    </stack-l>
   </ul>
 </nav>
