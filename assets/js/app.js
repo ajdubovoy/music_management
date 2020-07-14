@@ -13,6 +13,7 @@ import "../css/app.scss";
 //     import socket from "./socket"
 //
 import "phoenix_html";
-
 import Turbolinks from "turbolinks";
+import './layouts';
+
 Turbolinks.start()
