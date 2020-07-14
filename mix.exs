@@ -33,6 +33,7 @@ defmodule MusicManagement.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:bcrypt_elixir, "~> 2.0"},
       {:phoenix, "~> 1.5.3"},
       {:phoenix_ecto, "~> 4.1"},
       {:ecto_sql, "~> 3.4"},
@@ -45,8 +46,7 @@ defmodule MusicManagement.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:guardian, "~> 2.0"},
-      {:comeonin, "~> 2.5"}
+      {:phx_gen_auth, "~> 0.4.0", only: [:dev], runtime: false}
     ]
   end
 
