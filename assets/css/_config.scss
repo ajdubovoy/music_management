@@ -1,4 +1,3 @@
-@import 'gorko/gorko.scss';
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;1,700&display=swap');
 
 /**
@@ -141,7 +140,7 @@ $gorko-config: (
   ),
   'space': (
     'items': $gorko-size-scale,
-    'output': 'responsive',
+    'output': 'standard',
     'property': '--space',
   ),
   'stack': (
@@ -224,3 +223,5 @@ $gorko-config: (
     'property': 'height'
   ),
 );
+
+@import 'gorko/gorko.scss';

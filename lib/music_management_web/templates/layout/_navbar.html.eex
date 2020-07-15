@@ -1,17 +1,36 @@
 <header id="nav-header" class="[ navbar ] [align-center ]">
   <box-l>
     <nav id="navbar">
-      <ul class="nav-links">
-        <stack-l>
-          <%= render "_navbar-link.html", text: "Home", conn: @conn, path: Routes.page_path(@conn, :index), method: :get %>
-          <%= if @current_user do %>
-            <%= render "_navbar-link.html", text: "Settings", conn: @conn, path: Routes.user_settings_path(@conn, :edit), method: :get %>
-            <%= render "_navbar-link.html", text: "Log out", conn: @conn, path: Routes.user_session_path(@conn, :delete), method: :delete %>
-          <% else %>
-            <%= render "_navbar-link.html", text: "Log in", conn: @conn, path: Routes.user_session_path(@conn, :new), method: :get %>
-          <% end %>
+      <stack-l class=>
+        <div>
+          <ul class="nav-links">
+            <stack-l class="space-300">
+              <%= render "_navbar-link.html", text: "Home", conn: @conn, path: Routes.page_path(@conn, :index), method: :get %>
+            </stack-l>
+          </ul>
+        </div>
+
+        <stack-l class="nav-section space-300">
+          <div class="nav-label">
+            <h2>Account</h2>
+            <%= if @current_user do %>
+              <em class="text-400 box-block"><%= @current_user.email %></em>
+            <% end %>
+          </div>
+          <div>
+            <ul class="nav-links">
+              <stack-l class="space-300">
+                <%= if @current_user do %>
+                  <%= render "_navbar-link.html", text: "Settings", conn: @conn, path: Routes.user_settings_path(@conn, :edit), method: :get %>
+                  <%= render "_navbar-link.html", text: "Log out", conn: @conn, path: Routes.user_session_path(@conn, :delete), method: :delete %>
+                <% else %>
+                  <%= render "_navbar-link.html", text: "Log in", conn: @conn, path: Routes.user_session_path(@conn, :new), method: :get %>
+                <% end %>
+              </stack-l>
+            </ul>
+          </div>
         </stack-l>
-      </ul>
+      </stack-l>
     </nav>
   </box-l>
 </header>
