@@ -14,12 +14,13 @@ import "../css/app.scss";
 //
 import "phoenix_html";
 import Turbolinks from "turbolinks";
-import './layouts';
 
 Turbolinks.start()
 
+import './layouts';
 import initColorScheme from './components/color-scheme';
 
+initColorScheme();
+
 document.addEventListener('turbolinks:load', () => {
-  initColorScheme();
 });

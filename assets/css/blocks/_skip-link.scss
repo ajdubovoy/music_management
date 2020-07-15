@@ -3,6 +3,10 @@
   top: get-size('400');
   left: get-size('400');
   z-index: 99;
+  background: get-color('dark');
+  color: get-color('light');
+  padding: get-size('300');
+  margin: 0;
 
   // @extends should be used with care, but this is a great example of them being hella useful
   &:not(:focus) {

@@ -1,4 +1,4 @@
-<header id="nav-header" class="[ navbar ] [align-center ]">
+<header id="nav-header" class="[ navbar ] [align-center height-full outline-dash ]">
   <box-l>
     <nav id="navbar">
       <stack-l class=>
@@ -14,7 +14,7 @@
           <div class="nav-label">
             <h2>Account</h2>
             <%= if @current_user do %>
-              <em class="text-400 box-block"><%= @current_user.email %></em>
+              <em class="[ text-400 box-block weight-light ]"><%= @current_user.email %></em>
             <% end %>
           </div>
           <div>

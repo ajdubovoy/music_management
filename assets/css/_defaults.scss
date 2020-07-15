@@ -7,6 +7,16 @@
   --color-background: #{get-color('dark')};
   --color-mid: #{get-color('mid')};
   --color-text: #{get-color('light')};
+  p, *:not([class]) {
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 600;
+  }
 }
 
 [data-theme=light] {
@@ -33,7 +43,7 @@ body {
   font-size: get-size('500');
   height: 100%;
   width: 100%;
-  transition: color var(--duration), background var(--duration);
+  transition: color var(--duration), background var(--duration), font-weight var(--duration);
 
   @include apply-utility('leading', 'regular');
   @include apply-utility('font', 'base');
