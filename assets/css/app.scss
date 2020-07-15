@@ -1,5 +1,8 @@
 @import "modern-css-reset";
 @import "config";
 @import "defaults";
+
 @import "utilities/visually-hidden";
+
+@import "blocks/navbar";
 @import "blocks/skip-link";

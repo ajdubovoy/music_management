@@ -17,3 +17,9 @@ import Turbolinks from "turbolinks";
 import './layouts';
 
 Turbolinks.start()
+
+import initColorScheme from './components/color-scheme';
+
+document.addEventListener('turbolinks:load', () => {
+  initColorScheme();
+});

@@ -1,0 +1,12 @@
+.navbar {
+  text-align: center;
+  outline: 3px dashed;
+  min-height: 100vh;
+  &:not(.full) {
+    margin-bottom: -1rem;
+  }
+
+  a[aria-current=page] {
+    @include apply-utility('weight', 'bold');
+  }
+}

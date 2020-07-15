@@ -10,9 +10,15 @@
   </head>
   <body data-theme="light">
     <%= render "_skip-link.html" %>
-    <%= render "_user-menu.html", assigns %>
-    <main role="main" id="main-content">
-      <%= @inner_content %>
-    </main>
+    <sidebar-l class="height-full" sideWidth="20ch">
+      <div class="height-full">
+        <%= render "_navbar.html", assigns %>
+        <main role="main" id="main-content">
+          <box-l>
+            <%= @inner_content %>
+          </box-l>
+        </main>
+      </div>
+    </sidebar-l>
   </body>
 </html>

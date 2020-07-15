@@ -1,0 +1,9 @@
+<% current? = @conn.request_path === @path %>
+<li>
+  <%= link to: (if current?, do: "#main-content", else: @path), 'aria-current': (if current?, do: "page", else: false), method: @method do %>
+    <%= if current? do %>
+      <span class="visually-hidden">Current page: </span>
+    <% end %>
+    <span><%= @text %></span>
+  <% end %>
+</li>

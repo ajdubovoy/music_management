@@ -81,6 +81,16 @@ $gorko-config: (
     'output': 'responsive',
     'property': 'display'
   ),
+  'align': (
+    'items': (
+      'center': 'center',
+      'left': 'left',
+      'right': 'right',
+      'justify': 'justify-left'
+    ),
+    'output': 'responsive',
+    'property': 'display'
+  ),
   'font': (
     'items': (
       'base': 'Helvetica Neue,Helvetica,Arial,sans-serif',
@@ -202,5 +212,15 @@ $gorko-config: (
     ),
     'output': 'standard',
     'property': '--duration',
-  )
+  ),
+  'height': (
+    'items': (
+      'full': '100%',
+      'half': percentage(1/2),
+      'quarter': percentage(1/4),
+      'third': percentage(1/3)
+    ),
+    'output': 'responsive',
+    'property': 'height'
+  ),
 );
